@@ -1,4 +1,3 @@
-import { Customer } from './data.service';
 
 export const dataServiceMock = {
   findAll: jest.fn(() => [

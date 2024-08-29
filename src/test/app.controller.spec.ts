@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './app.controller';
-import { DataService } from './data.service';
-import { dataServiceMock } from './data.service.mock'; 
+import { AppController } from '../app/app.controller';
+import { DataService } from '../data/data.service';
+import { dataServiceMock } from '../data/data.service.mock'; 
 
 describe('AppController', () => {
   let appController: AppController;

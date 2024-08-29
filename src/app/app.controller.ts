@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Post, Body, Put } from '@nestjs/common';
-import { DataService } from './data.service';
-import { Customer } from './data.service'; 
+import { DataService } from '../data/data.service';
+import { Customer } from '../data/data.service'; 
 
 @Controller('customers')
 export class AppController {
