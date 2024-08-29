@@ -1,17 +1,30 @@
-// src/data/data.service.ts
-import { Injectable } from '@nestjs/common';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { faker } from '@faker-js/faker';
 
-// Definice typu zákazníka
-interface Customer {
+export interface Customer {
   id: number;
   name: string;
   email: string;
 }
 
 @Injectable()
-export class DataService {
+export class DataService implements OnModuleInit {
   private customers: Customer[] = [];
   private currentId = 1;
+
+  async onModuleInit() {
+    this.seedData(); 
+   }
+
+  // Metoda pro generování náhodných dat
+  private seedData() {
+    for (let i = 0; i < 10; i++) {
+      this.create({
+        name: faker.name.fullName(),
+        email: faker.internet.email(),
+      });
+    }
+  }
 
   findAll(): Customer[] {
     return this.customers;
