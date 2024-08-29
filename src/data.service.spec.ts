@@ -1,4 +1,3 @@
-// src/data/data.service.spec.ts
 import { Test, TestingModule } from '@nestjs/testing';
 import { DataService } from './data.service';
 
@@ -13,11 +12,11 @@ describe('DataService', () => {
     service = module.get<DataService>(DataService);
   });
 
-  it('should be defined', () => {
+  it('everything allright', () => {
     expect(service).toBeDefined();
   });
 
-  it('create a customer', () => {
+  it('create customers', () => {
     const customerData = { name: 'Johnny Silverhand', email: 'johnnysilverhand@2077.com' };
     const createdCustomer = service.create(customerData);
 
@@ -29,7 +28,7 @@ describe('DataService', () => {
     expect(service.findAll()).toContainEqual(createdCustomer);
   });
 
-  it('should return all customers', () => {
+  it('return all customers', () => {
     const customerData1 = { name: 'Johnny Silverhand', email: 'johnnysilverhand@2077.com' };
     const customerData2 = { name: 'David Martinez', email: 'DMartinez@2077.com' };
 
@@ -52,7 +51,7 @@ describe('DataService', () => {
     expect(foundCustomer).toEqual(createdCustomer);
   });
 
-  it('should update a customer by ID', () => {
+  it('update customers by ID', () => {
     const customerData ={ name: 'Johnny Silverhand', email: 'johnnysilverhand@2077.com' };
     const createdCustomer = service.create(customerData);
 
